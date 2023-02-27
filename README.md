@@ -2,23 +2,30 @@
 Pipeline Project Track 2 -- Genome Assembly 
 
 Setup: 
+
 Download SRRs from NCBI using wget. 
+
 Run fastq-dum -I --split-files (SRR) 
-   output names are _#.fastq 
+
+output names are _#.fastq 
 
 Project: 
 1. Which strains are most similar to the patient samples? 
+   
    -Use Bowtie2 to create an index for HCMV (NCBI accession NC_006273.2). 
    
    **bowtie2-build (downloaded fasta file) (output name_1)** 
+      
       output names are .bt2
    
    -then... 
    
    **bowtie2 --quiet -x (output name_1) -1 (SRR#1) -2 (SRR#2) -S HCMVmap.sam**
+      
       output names are .sam
       
    -Save only the reads that map to the HCMV index for use in assembly. 
+   
    **bowtie2 -x (output name_1) -1 (fasta_1 name) -2 (fasta_2 name) -S (corresponsing fasta.sam file) --al-conc-gz            (output name_2)**  
    
    
