@@ -1,1 +1,2 @@
-# CompBio-PipelineProject Pipeline Project Track 2 
+# CompBio-PipelineProject 
+Pipeline Project Track 2 
