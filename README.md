@@ -34,4 +34,4 @@ Project:
 2. Using the Bowtie2 output reads, assemble all four transcriptomes together to produce 1 assembly via SPAdes.
 Write the SPAdes command you used to the log file.
 
-**spades.py -k 77,99,127 -t 2 --only-assembler --pe-1 1 SRR5660030_1.fastq --pe-2 2 SRR5660030_2.fastq --pe-1 1 SRR5660033_1.fastq --pe-2 2 SRR5660033_2.fastq --pe-1 1 SRR5660044_1.fastq --pe-2 2 SRR5660044_2.fastq --pe-1 1 SRR5660045_1.fastq --pe-2 2 SRR5660045_2.fastq -o HCMV-SRR_assembly/**
+**spades.py -k 77,99,127 -t 2 --only-assembler --pe-1 1 HCMV30_mapped_1.fq.gz --pe-2 1 HCMV30_mapped_2.fq.gz  --pe-1 2 HCMV33_mapped_1.fq.gz --pe-2 2 HCMV33_mapped_2.fq.gz --pe-1 3 HCMV44_mapped_1.fq.gz --pe-2 3 HCMV44_mapped_2.fq.gz --pe-1 4 HCMV45_mapped_1.fq.gz --pe-2 4 HCMV45_mapped_2.fq.gz -o HCMV2-SRR_assembly**
