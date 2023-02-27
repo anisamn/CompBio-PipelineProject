@@ -23,3 +23,8 @@ Project:
    
    
    **Donor 1 (HCMV30) had 2,259,287 read pairs before Bowtie2 filtering and 4,518,577 read pairs after**
+   
+2. Using the Bowtie2 output reads, assemble all four transcriptomes together to produce 1 assembly via SPAdes.
+Write the SPAdes command you used to the log file.
+
+**spades.py -k 77,99,127 -t 2 --only-assembler --pe-1 1 SRR5660030_1.fastq --pe-2 2 SRR5660030_2.fastq --pe-1 1 SRR5660033_2.fastq --pe-2 2 SRR5660033_2.fastq --pe-1 1 SRR5660044_2.fastq --pe-2 2 SRR5660044_2.fastq --pe-1 1 SRR5660045_2.fastq --pe-2 2 SRR5660045_2.fastq -o HCMV-SRR_assembly/**
