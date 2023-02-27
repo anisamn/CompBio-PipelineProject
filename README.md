@@ -28,8 +28,12 @@ Project:
    
    **bowtie2 -x (output name_1) -1 (fasta_1 name) -2 (fasta_2 name) -S (corresponsing fasta.sam file) --al-conc-gz            (output name_2)**  
    
+Results:
    
-   **Donor 1 (HCMV30) had 2,259,287 read pairs before Bowtie2 filtering and 4,518,577 read pairs after**
+   **Donor 1 (HCMV30) had 2259287 read pairs before Bowtie2 filtering and 1480440 read pairs after**
+   **Donor 2 (HCMV33) had 2004530 read pairs before Bowtie2 filtering and 1437516 read pairs after**
+   **Donor 3 (HCMV44) had 2730258 read pairs before Bowtie2 filtering and 1797601 read pairs after**
+   **Donor 4 (HCMV45) had 2476889 read pairs before Bowtie2 filtering and 1858964 read pairs after**
    
 2. Using the Bowtie2 output reads, assemble all four transcriptomes together to produce 1 assembly via SPAdes.
 Write the SPAdes command you used to the log file.
