@@ -53,9 +53,9 @@ Results:
       
       use python contigCounter.py to run 
       
-   **There are # contigs > 1000 bp in the assembly**
+   **There are 48 contigs > 1000 bp in the assembly**
    
    Write python code to calculate the length of the assembly (total number of bp in all the contigs > 1000 bp in length) and write this # to the log file: 
    
-   **There are # bp in the assembly**
+   **There are 560515 bp in the assembly**
    
