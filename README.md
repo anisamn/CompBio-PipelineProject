@@ -45,6 +45,14 @@ Results:
 
    3. Write python code to calculate the number of contigs with a length > 1000 and write the number log files: 
    
+      vim contigCounter.py to create and edit .py file 
+      
+      use i to edit 
+      
+      use esc + :wq to exit 
+      
+      use python contigCounter.py to run 
+      
    **There are # contigs > 1000 bp in the assembly**
    
    Write python code to calculate the length of the assembly (total number of bp in all the contigs > 1000 bp in length) and write this # to the log file: 
