@@ -58,4 +58,46 @@ Results:
    Write python code to calculate the length of the assembly (total number of bp in all the contigs > 1000 bp in length) and write this # to the log file: 
    
    **There are 560515 bp in the assembly**
+   4. Does your assembly align with other virus strains? 
+      a. bring in Betaherpesvirinae data 
+         import Bio 
+         from Bio import Entrez
+         from Bio import SeqIO 
+         
+         Entrez.email = ''
+         handle = Entrez.esearch(db = 'nucleotide', term = '("Betaherpesvirinae"[Organism] OR          Betaherpesvirinae[All Fields]) AND refseq[filter]', tool = 'fetch', rettype =                  'fasta')
+         record = Entrez.read(handle)
+         handle.close()
+         
+         handle2 = Entrez.efetch(db='nucleotide', id=record['IdList'], rettype='gb', retmode =          'text')
+         
+         with open('Betaherpesvirinae.fasta', 'w') as f:
+         for seq_record in SeqIO.parse(handle2, "gb"):
+            outputs = ('>' +seq_record.id + '_' + seq_record.annotations["source"] + '\n' +               seq_record.seq)
+            out = (str(outputs))
+            f.write(out + '\n')
+         f.close()
+         **has 25 outputs when run from python, but 20 when run from powershell**
+       b. making a local database 
+         os.system('makeblastdb -in Betaherpesvirinae.fasta -out Betaherpesvirinae -title              Betaherpesvirinae -dbtype nucl')
+         
+       c. blasting from python using the longest contig as input 
+          inputFile = 'longestContig.txt'
+          outputFile = 'BetaherpesvirinaeResults.csv'
+          blastCommand = 'blastn -query ' + inputFile + ' -db Betaherpesvirinae -out ' +                 outputFile + ' -outfmt "6 sacc pident length qstart qend sstart send bitscore evalue           stitles" > blastout.tsv '
+          print(blastCommand)
+
+          os.system(blastCommand)
+          
+       d. create and view table 
+          os.system('sed -i -e '1i "sacc","pident", "length", " qstart", " qend", " sstart", "           send", " bitscore", " evalue", " stitle"' BetaherpesvirinaeResults.csv')
+          **how to write output csv to log file**
+          **is log file correct? not writing to github**
+          
+            
+         
+         
+
+   
+      
    
