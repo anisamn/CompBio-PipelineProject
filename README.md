@@ -77,7 +77,7 @@ Results:
             out = (str(outputs))
             f.write(out + '\n')
          f.close()
-         **has 25 outputs when run from python, but 20 when run from powershell**
+         **has 25 outputs when run from python, but 20 when run from powershell -- dont limit to refseq**
        b. making a local database 
          os.system('makeblastdb -in Betaherpesvirinae.fasta -out Betaherpesvirinae -title              Betaherpesvirinae -dbtype nucl')
          
